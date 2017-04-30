@@ -1,0 +1,25 @@
+
+body{
+	
+}
+
+.mainBloc{
+	border: solid 2px green;
+	margin: 10px;
+	height: 500px;
+}
+.pictures{
+	border: solid 2px blue;
+	margin: 10px;
+	height: 400px;
+}
+
+.inputBloc{
+	border: solid 2px yellow;
+	margin: 5px;
+	height: 100px; 
+}
+
+button{
+	margin: 5px;
+}
