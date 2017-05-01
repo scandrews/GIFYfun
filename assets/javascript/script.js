@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
 var searchSubject = "chipmonk";
-var gifyAnimals = ["dogs", "cats"];
+var gifyAnimals = ["dogs", "cats", "chinchilla", "salamander"];
 
 function renderAllButtons() {
     // delete all buttons
@@ -14,6 +14,7 @@ function renderAllButtons() {
         $(".buttonBloc").append(button)
     }
 }
+
 
 // write the default buttons to the screen
 renderAllButtons();
@@ -42,24 +43,27 @@ function queryAndDisp(newUrl){
     }).done(function(response) {
   		  var whaDweGitBack = response;
         for(var i=0; i<10; i++){
-          $(".pictures").prepend("<img src='" + whaDweGitBack.data[i].images.downsized.url + "'>");
+          $(".pictures").prepend("<img src='" + whaDweGitBack.data[i].images.original_still.url + "'data-still='" + whaDweGitBack.data[i].images.original_still.url + "'data-animate='" + whaDweGitBack.data[i].images.original.url + "'data-state='still' class='gif'>")
         }
     });
 }
 
-
-
-
-// alert(searchSubject); 
-        // console.log("search Subject - " + searchSubject);
-        // var searchSubject = $(this).attr("data-name");
-
-
-
-
-// console.log("at end search subject - " + searchSubject);
-// console.log("at end query URL - " + queryURL);
-// console.log("at end picToDisplay - " + picToDisplay);
+// wait for a GIFY to be clicked
+$(".pictures").on("click", ".gif", function() {
+      // store the image's data-state
+      var state = $(this).data("state");
+      // chage the state and src to the opposite
+      switch (state) {
+        case "animate":
+            $(this).data("state", "still");
+            $(this).attr("src", $(this).data("still"));
+        break;
+        case "still":
+            $(this).data("state", "animate");
+            $(this).attr("src", $(this).data("animate"));
+        break;
+      }
+});
 
 // end doc ready
 })

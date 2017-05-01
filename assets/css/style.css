@@ -2,15 +2,17 @@
 body{
 	
 }
+h1{
+	margin-left: 20px;
+}
 
 .mainBloc{
 	border: solid 2px green;
-	margin: 10px;
 	height: 500px;
 }
 .pictures{
 	border: solid 2px blue;
-	margin: 10px;
+	margin: 5px;
 	height: 400px;
 }
 
