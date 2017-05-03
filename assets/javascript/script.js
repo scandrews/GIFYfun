@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
 var searchSubject = "chipmonk";
-var gifyAnimals = ["dogs", "cats", "chinchilla", "salamander"];
+var gifyAnimals = ["dogs", "cats", "chinchilla", "salamander", "frank zappa", "giraffe"];
 
 function renderAllButtons() {
     // delete all buttons
@@ -15,14 +15,37 @@ function renderAllButtons() {
     }
 }
 
+// displays the GIFYs and, contains the links to the animated GIFYs 
+function queryAndDisp(newUrl){
+  	$.ajax({
+      url: newUrl, 
+      method: "GET"
+    }).done(function(response) {
+  		  var whaDweGitBack = response;
+        // Display the first tem GIFYs
+        for(var i=0; i<10; i++){
+          $(".pictures").prepend("<img src='" + whaDweGitBack.data[i].images.original_still.url + "'data-still='" + whaDweGitBack.data[i].images.original_still.url + "'data-animate='" + whaDweGitBack.data[i].images.original.url + "'data-state='still' class='gif'>")
+        }
+    });
+}
 
-// write the default buttons to the screen
+// upon initial start write the default buttons to the screen
 renderAllButtons();
 
 // Wait for a new animal, get it then call renderAllButtons
 $("#addSubject").on("click", function(event) {
     event.preventDefault();
-  	var newAnimal = $("#gifySubject").val().trim();
+    var newAnimal = $("#gifySubject").val().trim();
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  can't figure out how to clear the form once the entry is entered  
+//
+//    ".form-control".reset();
+//  document.getElementById(".form-control").reset();
+//
+///////////////////////////////////////////////////////////////////////////////
+
     // add to array
     gifyAnimals.push(newAnimal);
     // add to screen
@@ -33,20 +56,8 @@ $("#addSubject").on("click", function(event) {
 $(".buttonBloc").on("click", "button", function() {
     searchSubject = $(this).text();
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchSubject + "&api_key=dc6zaTOxFJmzC";
-	  queryAndDisp(queryURL);
+    queryAndDisp(queryURL);
     });
-
-function queryAndDisp(newUrl){
-  	$.ajax({
-      url: newUrl, 
-      method: "GET"
-    }).done(function(response) {
-  		  var whaDweGitBack = response;
-        for(var i=0; i<10; i++){
-          $(".pictures").prepend("<img src='" + whaDweGitBack.data[i].images.original_still.url + "'data-still='" + whaDweGitBack.data[i].images.original_still.url + "'data-animate='" + whaDweGitBack.data[i].images.original.url + "'data-state='still' class='gif'>")
-        }
-    });
-}
 
 // wait for a GIFY to be clicked
 $(".pictures").on("click", ".gif", function() {

@@ -1,27 +1,38 @@
 
 body{
+    background-color: #cccccc;	
 	
 }
 h1{
-	margin-left: 20px;
+	margin-left: 85px;
 }
 
 .mainBloc{
-	border: solid 2px green;
-	height: 500px;
+	padding: 0px;
+	/*height: 500px;*/
 }
+
+.buttonBloc{
+	margin-left: -14px
+}
+
 .pictures{
-	border: solid 2px blue;
-	margin: 5px;
+	margin: 5px 0px 5px 0px;
+	/*padding-left: 20px;*/
 	height: 400px;
 }
 
 .inputBloc{
-	border: solid 2px yellow;
 	margin: 5px;
-	height: 100px; 
+	height: 100px;
 }
 
 button{
-	margin: 5px;
+	margin: 5px 10px 5px 0px;
+	/*padding: 0px;*/
+}
+
+.gif{
+	margin: 5px 10px 5px 0px;
+	/*padding: 10px;*/
 }
