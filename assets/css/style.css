@@ -1,10 +1,11 @@
 
 body{
-    background-color: #cccccc;	
-	
+    background-color: #cccccc;
+    background-image: url("../images/bgimage.jpg");
 }
+
 h1{
-	margin-left: 85px;
+	margin-left: 65px;
 }
 
 .mainBloc{

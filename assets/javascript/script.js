@@ -36,18 +36,10 @@ renderAllButtons();
 $("#addSubject").on("click", function(event) {
     event.preventDefault();
     var newAnimal = $("#gifySubject").val().trim();
-
-///////////////////////////////////////////////////////////////////////////////
-//
-//  can't figure out how to clear the form once the entry is entered  
-//
-//    ".form-control".reset();
-//  document.getElementById(".form-control").reset();
-//
-///////////////////////////////////////////////////////////////////////////////
-
     // add to array
     gifyAnimals.push(newAnimal);
+    // clear the field on the screen
+    var newAnimal = $("#gifySubject").val("");
     // add to screen
     renderAllButtons();
 });
