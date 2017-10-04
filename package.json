@@ -1,0 +1,23 @@
+{
+  "name": "gifyfun",
+  "version": "1.0.0",
+  "description": "fetch gifys, start and stop",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scandrews/GIFYfun.git"
+  },
+  "author": "Steven Andrews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scandrews/GIFYfun/issues"
+  },
+  "homepage": "https://github.com/scandrews/GIFYfun#readme",
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}

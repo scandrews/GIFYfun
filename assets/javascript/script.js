@@ -1,3 +1,4 @@
+
 // this is the javascript file for the GIFY homework project
 $(document).ready(function() {
 

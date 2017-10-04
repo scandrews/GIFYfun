@@ -19,9 +19,11 @@ Homepage
 
 Technologies Used:
 
-Bootstrap CSS
-javaScript
-API
+Front-end: Bootstrap, JQuery
+Routing: Express
+Server: Nodejs
+API: ajax
+
 
 Author:
 Steven Andrews
